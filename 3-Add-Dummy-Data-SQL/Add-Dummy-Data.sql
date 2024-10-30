@@ -3,13 +3,19 @@ INSERT INTO Users (username, email, password, address, phone_number) VALUES
     ('mario', 'mario@example.com', 'hashed_password1', '123 Mushroom Kingdom Ave', '123-456-7890'),
     ('luigi', 'luigi@example.com', 'hashed_password2', '456 Mushroom Kingdom Ave', '098-765-4321'),
     ('peach', 'peach@example.com', 'hashed_password3', '789 Princess Castle Blvd', '567-890-1234');
+   
+-- Inserting Dummy Data into Categories Table
+INSERT INTO Categories (name, image_url) values
+	('Vehicles', 'https://example.com/vehicles.jpg'),
+	('Accessories', 'https://example.com/accessories.jpg'),
+	('Apparel', 'https://example.com/apparel.jpg');
 
 -- Inserting Dummy Data into Products Table
-INSERT INTO Products (name, description, price, stock_quantity, category, image_url) VALUES 
-    ('Mushroom Kart', 'A high-speed kart powered by mushrooms', 2000.00, 10, 'Vehicles', 'https://example.com/mushroom_kart.jpg'),
-    ('Fire Flower Helmet', 'A helmet inspired by the fire flower', 150.00, 50, 'Accessories', 'https://example.com/fire_flower_helmet.jpg'),
-    ('Starman Suit', 'A suit that gives temporary invincibility', 400.00, 20, 'Apparel', 'https://example.com/starman_suit.jpg'),
-    ('Power Gloves', 'Gloves that enhance grip and control', 75.00, 100, 'Apparel', 'https://example.com/power_gloves.jpg');
+INSERT INTO Products (name, description, price, stock_quantity, category_id, image_url) VALUES 
+    ('Mushroom Kart', 'A high-speed kart powered by mushrooms', 2000.00, 10, 1, 'https://example.com/mushroom_kart.jpg'),
+    ('Fire Flower Helmet', 'A helmet inspired by the fire flower', 150.00, 50, 2, 'https://example.com/fire_flower_helmet.jpg'),
+    ('Starman Suit', 'A suit that gives temporary invincibility', 400.00, 20, 3, 'https://example.com/starman_suit.jpg'),
+    ('Power Gloves', 'Gloves that enhance grip and control', 75.00, 100, 3, 'https://example.com/power_gloves.jpg');
 
 -- Inserting Dummy Data into Orders Table
 INSERT INTO Orders (user_id, order_date, total_amount, status) VALUES 

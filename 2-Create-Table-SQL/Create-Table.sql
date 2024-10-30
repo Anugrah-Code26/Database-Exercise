@@ -1,18 +1,14 @@
--- public.products definition
+-- public.categories definition
 
 -- Drop table
 
--- DROP TABLE public.products;
+-- DROP TABLE public.categories;
 
-CREATE TABLE public.products (
-	product_id serial4 NOT NULL,
+CREATE TABLE public.categories (
+	category_id serial4 NOT NULL,
 	"name" varchar(255) NOT NULL,
-	description text NULL,
-	price numeric(10, 2) NOT NULL,
-	stock_quantity int4 NOT NULL,
-	category varchar(255) NULL,
 	image_url varchar(255) NULL,
-	CONSTRAINT products_pkey PRIMARY KEY (product_id)
+	CONSTRAINT categories_pkey PRIMARY KEY (category_id)
 );
 
 
@@ -67,6 +63,25 @@ CREATE TABLE public.payments (
 	status varchar(50) DEFAULT 'Pending'::character varying NULL,
 	CONSTRAINT payments_pkey PRIMARY KEY (payment_id),
 	CONSTRAINT payments_order_id_fkey FOREIGN KEY (order_id) REFERENCES public.orders(order_id)
+);
+
+
+-- public.products definition
+
+-- Drop table
+
+-- DROP TABLE public.products;
+
+CREATE TABLE public.products (
+	product_id serial4 NOT NULL,
+	"name" varchar(255) NOT NULL,
+	description text NULL,
+	price numeric(10, 2) NOT NULL,
+	stock_quantity int4 NOT NULL,
+	image_url varchar(255) NULL,
+	category_id int4 NULL,
+	CONSTRAINT products_pkey PRIMARY KEY (product_id),
+	CONSTRAINT fk_category FOREIGN KEY (category_id) REFERENCES public.categories(category_id)
 );
 
 
