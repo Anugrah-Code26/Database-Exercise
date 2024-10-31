@@ -88,12 +88,12 @@ INSERT INTO Order_Status (name) values
 	('Complained');
 
 -- Inserting Dummy Data into Orders Table
-INSERT INTO Orders (user_id, order_date, total_weight_grams, total_amount, order_status_id) VALUES 
-    (1, '2024-10-28 12:34:56', 30000.00, 3000000.00, 6),
-    (1, '2024-10-28 12:34:56', 3000.00, 450000.00, 4),
-    (2, '2024-10-29 13:22:18', 2000.00, 225000.00, 3),
-    (3, '2024-10-30 14:45:32', 3000.00, 780000.00, 5),
-    (7, '2024-10-31 15:04:26', 5000.00, 20500000.00, 3);
+INSERT INTO Orders (user_id, order_date, total_unit, total_weight_grams, total_amount, order_status_id) VALUES 
+    (1, '2024-10-28 12:34:56', 1, 30000.00, 3000000.00, 6),
+    (1, '2024-10-28 12:34:56', 3, 3000.00, 450000.00, 4),
+    (2, '2024-10-29 13:22:18', 1, 2000.00, 225000.00, 3),
+    (3, '2024-10-30 14:45:32', 2, 3000.00, 780000.00, 5),
+    (7, '2024-10-31 15:04:26', 1, 5000.00, 20500000.00, 3);
 
 -- Inserting Dummy Data into Order_Items Table
 INSERT INTO Order_Items (order_id, product_id, quantity, price_per_unit) VALUES 
